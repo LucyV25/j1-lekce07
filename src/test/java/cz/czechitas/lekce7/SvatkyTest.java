@@ -80,7 +80,7 @@ class SvatkyTest {
    * Testuje metodu {@link Svatky#pridatSvatek(String, MonthDay)}
    */
   @Test
-  void prridatSvatekMonthDay() {
+  void pridatSvatekMonthDay() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
     Svatky svatky = new Svatky();
     svatky.pridatSvatek("Barbora",5,12);
