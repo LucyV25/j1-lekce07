@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Filip Jirsák
  */
 class SvatkyTest {
-
+  Svatky svatky = new Svatky();
   /**
    * Testuje metodu {@link Svatky#kdyMaSvatek(String)}
    */
@@ -29,7 +29,6 @@ class SvatkyTest {
   @Test
   void jeVSeznamu() {
     //TODO Otestovat, že najde v seznamu existující jméno a nenajde neexistující jméno
-    Svatky svatky = new Svatky();
     assertTrue(svatky.jeVSeznamu("Monika"));
     assertFalse(svatky.jeVSeznamu("Eva"));
     assertFalse(svatky.jeVSeznamu("sdfsdfsfs"));
@@ -41,7 +40,6 @@ class SvatkyTest {
   @Test
   void getPocetJmen() {
     //TODO Otestovat, že vrací počet jmen, která máme v seznamu
-    Svatky svatky = new Svatky();
     int pocet=svatky.getPocetJmen();
     assertEquals(37,pocet);
   }
@@ -52,7 +50,6 @@ class SvatkyTest {
   @Test
   void getSeznamJmen() {
     //TODO Zkontrolovat, že seznam jmen má správný počet položek.
-    Svatky svatky = new Svatky();
     int pocet=svatky.getSeznamJmen().size();
     assertEquals(37,pocet);
   }
