@@ -20,6 +20,7 @@ class SvatkyTest {
     Svatky svatky = new Svatky();
     assertEquals(MonthDay.of(5, 18), svatky.kdyMaSvatek("Nataša"));
     assertNull(svatky.kdyMaSvatek("Eva"));
+    assertNull(svatky.kdyMaSvatek("sdfsdfsfs"));
   }
 
   /**
@@ -28,6 +29,10 @@ class SvatkyTest {
   @Test
   void jeVSeznamu() {
     //TODO Otestovat, že najde v seznamu existující jméno a nenajde neexistující jméno
+    Svatky svatky = new Svatky();
+    assertTrue(svatky.jeVSeznamu("Monika"));
+    assertFalse(svatky.jeVSeznamu("Eva"));
+    assertFalse(svatky.jeVSeznamu("sdfsdfsfs"));
   }
 
   /**
@@ -36,6 +41,9 @@ class SvatkyTest {
   @Test
   void getPocetJmen() {
     //TODO Otestovat, že vrací počet jmen, která máme v seznamu
+    Svatky svatky = new Svatky();
+    int pocet=svatky.getPocetJmen();
+    assertEquals(37,pocet);
   }
 
   /**
@@ -44,6 +52,9 @@ class SvatkyTest {
   @Test
   void getSeznamJmen() {
     //TODO Zkontrolovat, že seznam jmen má správný počet položek.
+    Svatky svatky = new Svatky();
+    int pocet=svatky.getSeznamJmen().size();
+    assertEquals(37,pocet);
   }
 
   /**
@@ -52,6 +63,9 @@ class SvatkyTest {
   @Test
   void pridatSvatekDenMesicInt() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+    Svatky svatky = new Svatky();
+    svatky.pridatSvatek("Lucie",13,12);
+    assertEquals(MonthDay.of(12, 13), svatky.kdyMaSvatek("Lucie"));
   }
 
   /**
@@ -60,6 +74,9 @@ class SvatkyTest {
   @Test
   void pridatSvatekDenMesicMonth() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+    Svatky svatky = new Svatky();
+    svatky.pridatSvatek("Iva", 1,12);
+    assertEquals(MonthDay.of(12, 1), svatky.kdyMaSvatek("Iva"));
   }
 
   /**
@@ -68,6 +85,9 @@ class SvatkyTest {
   @Test
   void prridatSvatekMonthDay() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+    Svatky svatky = new Svatky();
+    svatky.pridatSvatek("Barbora",5,12);
+    assertEquals(MonthDay.of(12, 5), svatky.kdyMaSvatek("Barbora"));
   }
 
   /**
@@ -76,5 +96,8 @@ class SvatkyTest {
   @Test
   void smazatSvatek() {
     //TODO Zkontrolovat, že po smazání bude počet svátků odpovídat novému počtu.
+    Svatky svatky = new Svatky();
+    svatky.smazatSvatek("Nataša");
+    assertFalse(svatky.jeVSeznamu("Nataša"));
   }
 }
