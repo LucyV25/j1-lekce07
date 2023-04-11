@@ -72,7 +72,7 @@ class SvatkyTest {
   void pridatSvatekDenMesicMonth() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
     Svatky svatky = new Svatky();
-    svatky.pridatSvatek("Iva", 1,12);
+    svatky.pridatSvatek("Iva",1,Month.DECEMBER);
     assertEquals(MonthDay.of(12, 1), svatky.kdyMaSvatek("Iva"));
   }
 
@@ -83,7 +83,7 @@ class SvatkyTest {
   void pridatSvatekMonthDay() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
     Svatky svatky = new Svatky();
-    svatky.pridatSvatek("Barbora",5,12);
+    svatky.pridatSvatek("Barbora",MonthDay.of(12,4));
     assertEquals(MonthDay.of(12, 5), svatky.kdyMaSvatek("Barbora"));
   }
 
